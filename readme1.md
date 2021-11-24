@@ -7,7 +7,7 @@
 ### 5. Testing ( rest )
 ### 6. Performance
 ### 7. Integration
-s
+
 ### Kanban App
 ### Emaillist App
 ### Guestbook App [과제] state & props / 통신
