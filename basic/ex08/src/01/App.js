@@ -15,7 +15,6 @@ export default function () {
             */}
       <br />
       <hr />
-      <h1></h1>
       <img width="100px" src="https://www.nicepng.com/png/detail/222-2224705_react-js-logo.png" />
       {/*
                 3. 속성 이름은 DOM API 기반이다.
