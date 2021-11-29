@@ -1,8 +1,6 @@
 {
   "editor.formatOnSave": true,
   "javascript.format.enable": false,
-  "prettier.eslintIntegration": true,
   "prettier.printWidth": 140,
-  "prittier.tabWidth": 4,
   "prettier.singleQuote": true
 }
