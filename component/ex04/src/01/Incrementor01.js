@@ -8,21 +8,27 @@ export default class extends Component {
     };
   }
 
-  onClickButton() {
-    // this.state.value = this.state.value + this.props.step
+  onClickAddButton() {
+    // this.state.value = this.state.value + this.props.step == render 안된다.
     this.setState({
       value: this.state.value + this.props.step,
+    });
+  }
+  onClickSubButton() {
+    // this.state.value = this.state.value + this.props.step == render 안된다.
+    this.setState({
+      value: this.state.value - this.props.step,
     });
   }
 
   render() {
     return (
       <div>
-        <button onClick={this.onClickButton.bind(this)}>
+        <button onClick={this.onClickAddButton.bind(this)}>
           <strong>+</strong>
         </button>{' '}
         <span>{this.state.value}</span>{' '}
-        <button>
+        <button onClick={this.onClickSubButton.bind(this)}>
           <strong>-</strong>
         </button>
       </div>
