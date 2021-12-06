@@ -1,6 +1,7 @@
 ## React Pracractices - Integration(개발 환경 통합)
 
 ## Configuration
+
 1. Application(Project) Structure
    <pre>
    /app
@@ -40,7 +41,9 @@
 6. node application
 
 ## Application
+
 1. app01.emaillist
+
    - 개발 통합 설정(with Node Backend)
    - backend: Fully APIs(Node Exporess기반)
    - Frontend: React(SPA)
@@ -54,8 +57,5 @@
 3. app03.guestbook
 4. app04.gallery
 5. app05.mysite
+
 ---
-
-
-
-

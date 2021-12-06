@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import KanbanBoard from './KanbanBoard';
+import './assets/css/index.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<KanbanBoard />, document.getElementById('root'));
+
