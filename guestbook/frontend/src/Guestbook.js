@@ -3,14 +3,11 @@ import WriteForm from './WriteForm';
 import MessageList from './MessageList';
 import styles from './assets/scss/Guestbook.scss';
 
-import data from './assets/json/data.json';
-
 export default function Guestbook() {
-    const [messages, setMessages] = useState(data);
+    const [messages, setMessages] = useState([]);
 
-    useEffect(() => {
-        console.log('최초 메세지 리스트 가져오기');        
-        fetchMessageList();
+    useEffect(() => { 
+        fetchMessages();
     }, []);
 
     const notifyMessage = {
@@ -27,8 +24,32 @@ export default function Guestbook() {
         }
     }
 
-    const fetchMessageList = () => {
-        console.log('message list 가져오기');
+    const fetchMessages = async() => {
+        try {
+            const startNo = messages.length == 0 ? 0 : messages[messages.length-1].no;
+            const response = await fetch(`/api/${startNo}`, {
+                method: 'get',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            });
+
+            if(!response.ok) {
+                throw new Error(`${response.status} ${response.statusText}`);
+            }
+
+            const json = await response.json();
+
+            if(json.result !== 'success') {
+                throw json.message;
+            }
+
+            setMessages([...messages, ...json.data]);
+
+        } catch(err) {
+            console.error(err);
+        }
     };
 
     return (

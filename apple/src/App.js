@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
-  let [글제목, 글제목변경] = useState(['남자코트 추천', '강남 우동맛집', '파이썬독학']);
+  let [글제목, 글제목변경] = useState([
+    "남자코트 추천",
+    "강남 우동맛집",
+    "파이썬독학",
+  ]);
+
   let [따봉, 따봉변경] = useState(0);
   let [modal, modal변경] = useState(false);
   let [누른제목, 누른제목변경] = useState(0);
-  let [입력값, 입력값변경] = useState('');
+  let [입력값, 입력값변경] = useState("ㄴㄴ");
 
   // function 반복된UI() {
   //   var 어레이 = [];
@@ -37,7 +42,6 @@ function App() {
       <div className="black-nav">
         <div>개발 Blog</div>
       </div>
-
       {글제목.map(function (글, i) {
         return (
           <div className="list" key={i}>
@@ -61,13 +65,12 @@ function App() {
           </div>
         );
       })}
-
-      {/* <input
+      {입력값}
+      <input
         onChange={(e) => {
           입력값변경(e.target.value);
         }}
-      /> */}
-
+      />
       <button
         onClick={() => {
           modal변경(!modal);
@@ -75,8 +78,9 @@ function App() {
       >
         열고 닫기
       </button>
-
-      {modal === true ? <Modal 글제목={글제목} 누른제목={누른제목}></Modal> : null}
+      {modal === true ? (
+        <Modal 글제목={글제목} 누른제목={누른제목}></Modal>
+      ) : null}
     </div>
   );
 }
